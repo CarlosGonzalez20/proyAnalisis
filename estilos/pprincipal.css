@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el encabezado */
+.main-header {
+    background-color: #d32127;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-title {
+    margin: 0;
+}
+
+/* Estilos para la navegación */
+.main-nav {
+    background-color: #555;
+    padding: 10px;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    display: inline;
+    margin-right: 10px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilos para la sección principal */
+.main-section {
+    padding: 20px;
+}
+
+.section-title {
+    margin: 0;
+}
+
+.section-content {
+    margin: 0;
+}
+
+/* Estilos para el pie de página */
+.main-footer {
+    background-color: #a97c19;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
