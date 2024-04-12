@@ -26,6 +26,8 @@ body {
 .main-nav {
     background-color: #555;
     padding: 10px;
+    overflow: hidden;
+    height: auto;
 }
 
 .nav-list {
