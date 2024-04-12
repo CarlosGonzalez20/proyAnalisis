@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MegaMart</title>
     <link rel="stylesheet" href="../estilos/pprincipal.css">
-    <link rel="stylesheet" href="../estilos/images.css">
+    <link rel="stylesheet" href="../estilos/pducts&buttons.css">
 </head>
 <body>
     <header class="main-header">
@@ -188,11 +188,11 @@
             <!-- Conectar con la BD -->
             <!-- Agregar categorías -->
             <!-- Agregar enlaces en subcategorías -->
-            <li class="sidebar-item"><a href="#" class="sidebar-link" onclick="toggleSubmenu('submenu1')">Opción 1
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu1')">Opción 1
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                     </svg>   
-                </a>               
+                </div>               
                 <!-- Agregar subcategorías -->
                 <ul id="submenu1" class="sidebar-submenu">
                     <li><a href="#">Submenu 1</a></li>
@@ -200,11 +200,11 @@
                     <li><a href="#">Submenu 3</a></li>
                 </ul>
             </li>
-            <li class="sidebar-item"><a href="#" class="sidebar-link" onclick="toggleSubmenu('submenu2')">Opción 2
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu2')">Opción 2
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                 </svg>
-            </a>
+            </div>
                 <!-- Agregar subcategorías -->
                 <ul id="submenu2" class="sidebar-submenu">
                     <li><a href="#">Submenu 1</a></li>
@@ -212,11 +212,11 @@
                     <li><a href="#">Submenu 3</a></li>
                 </ul>
             </li>
-            <li class="sidebar-item"><a href="#" class="sidebar-link" onclick="toggleSubmenu('submenu3')">Opción 3
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu3')">Opción 3
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                 </svg>
-            </a>
+            </div>
                 <!-- Agregar subcategorías -->
                 <ul id="submenu3" class="sidebar-submenu">
                     <li><a href="#">Submenu 1</a></li>
@@ -230,79 +230,6 @@
         <p class="footer-copyright">Derechos de autor &copy; 2024</p>
     </footer>
     <!-- Script JavaScript -->
-    <script>
-        function toggleSubmenu(submenuId, event) {
-            if (event) {
-                event.stopPropagation(); // Evita que el evento de clic se propague al documento
-            }
-            var submenu = document.getElementById(submenuId);
-            submenu.classList.toggle('show');
-        }
-
-        document.getElementById('toggleMenu').addEventListener('click', function(event) {
-            event.stopPropagation(); // Evita que el evento de clic se propague al documento
-            var menuSidebar = document.getElementById('menuSidebar');
-            if (menuSidebar.classList.contains('show')) {
-                menuSidebar.classList.remove('show');
-            } else {
-                menuSidebar.classList.add('show');
-            }
-        });
-
-        document.addEventListener('click', function(event) {
-            var menuSidebar = document.getElementById('menuSidebar');
-            // Si el menú lateral está abierto y el clic no ocurrió dentro del menú lateral
-            if (menuSidebar.classList.contains('show') && !menuSidebar.contains(event.target)) {
-                menuSidebar.classList.remove('show'); // Oculta el menú lateral
-            }
-        });
-
-        //Main-nav fijo, después de que el encabezado no es visible
-        window.addEventListener('scroll', function() {
-        var header = document.querySelector('header');
-        var mainNav = document.querySelector('.main-nav');
-
-        // Altura del encabezado
-        var headerHeight = header.offsetHeight;
-
-        // Posición actual de desplazamiento vertical
-        var scrollPosition = window.scrollY || window.pageYOffset;
-
-        if (scrollPosition >= headerHeight) {
-            // Si el usuario ha desplazado más allá de la altura del encabezado, fija el menú main-nav en la parte superior
-            mainNav.style.position = 'fixed';
-            mainNav.style.top = '0';
-            mainNav.style.width = '99%';
-            mainNav.style.zIndex = '1'; // Asegura que el menú esté por encima de otros elementos
-        } else {
-            // Si el usuario está en la parte superior de la página, deja el menú main-nav en su posición normal
-            mainNav.style.position = 'static';
-        }
-    });
-
-    // Función para mostrar el menú del usuario al hacer clic en el icono del usuario
-    function toggleUserMenu(event) {
-        event.stopPropagation();
-        var userMenu = document.querySelector('.user-menu');
-        var iconUser = document.querySelector('.icon-user');
-        var iconUserRect = iconUser.getBoundingClientRect();
-        var userMenuWidth = userMenu.offsetWidth;
-        // Calcula la posición del menú relativa al icono de usuario
-        var menuLeft = iconUserRect.left;
-        var menuTop = iconUserRect.bottom + 10;
-        userMenu.style.left = menuLeft + -135 + 'px';
-        userMenu.style.top = menuTop + 'px';
-        userMenu.classList.toggle('show');
-    }
-
-    document.getElementById('toggleUserMenu').addEventListener('click', toggleUserMenu);
-
-    document.addEventListener('click', function(event) {
-        var userMenu = document.querySelector('.user-menu');
-        if (userMenu.classList.contains('show') && !userMenu.contains(event.target)) {
-            userMenu.classList.remove('show');
-        }
-    });
-    </script>
+    <script src="/proyAnalisis/JavaScript/funcionesClic.js"></script>
 </body>
 </html>
