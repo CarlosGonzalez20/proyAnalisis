@@ -1,0 +1,155 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Establece la altura mínima del cuerpo de la página al 100% del viewport */
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos del cuerpo se apilen verticalmente */
+}
+
+main {
+  flex: 1; /* Hace que el contenido principal (main) ocupe todo el espacio restante */
+}
+  
+ 
+  /* Estilos del header */
+header {
+    background-color: #232f3e;
+    color: #ffffff;
+    padding: 0.2% 0;
+}
+
+.conten{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+  
+.logo img {
+    text-align: center;
+    width: 80%;
+    height: 50px;
+    border-radius: 5px;
+    margin: 15px;
+}
+  
+.input{
+    background: #ffffff;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 38px;
+    border-radius: 5px;
+}  
+
+.bus {
+  display: inline-block;
+  background-color: #ff9900;
+  color: black;    
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.bus:hover {
+  background-color: #ff6600;
+}
+  
+
+  
+
+  
+  /* Estilos del footer */
+footer {
+    background-color: #232f3e;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+
+
+
+
+
+.precio{
+    color: black;
+    max-width: 300 px;
+    font-size: 2.5em;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 40px 0;
+}
+
+.nombre{
+    color: black;
+    text-align: center;
+    max-width: 300 px;
+    font-size: 2.5em;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 40px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.contenedor{
+    background: #ffffff;
+    min-height: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 10px 10px 10px;
+    margin: 15px;
+}
+
+.contenedorImagen{
+    text-align: center;
+    width: 80%;
+    height: 350px;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+.contenedorTexto{
+    width: 800px;
+}
+
+.texto{
+    color: black;
+    text-align: justify;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ff9900;
+  color: black;    
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #ff6600;
+}
