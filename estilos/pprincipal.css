@@ -14,9 +14,52 @@ body {
 .main-header {
     background-color: #6bb39b;
     color: #fff;
-    padding: 20px;
+    padding: 0.2% 0;
     text-align: center;
 }
+
+.conten{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+    
+  .logo img {
+      text-align: center;
+      width: 80%;
+      height: 50px;
+      border-radius: 5px;
+      margin: 15px;
+  }
+    
+  .input{
+      background: #ffffff;
+      align-items: center;
+      justify-content: center;
+      width: 80%;
+      height: 38px;
+      border-radius: 5px;
+  }  
+  
+  .bus {
+    display: inline-block;
+    background-color: #ff9900;
+    color: black;    
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .bus:hover {
+    background-color: #ff6600;
+  }
 
 .main-title {
     margin: 0;
@@ -72,6 +115,10 @@ body {
     display: inline;
     margin-right: 15px;
     margin-left: 0px;
+}
+
+.nav-link:hover {
+    cursor: pointer;
 }
 
 .nav-item svg {
