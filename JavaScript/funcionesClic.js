@@ -79,3 +79,8 @@ if (userMenu.classList.contains('show') && !userMenu.contains(event.target)) {
     userMenu.classList.remove('show');
 }
 });
+
+function toggleInfo() {
+    var info = document.getElementById('info');
+    info.style.display = (info.style.display === 'none' || info.style.display === '') ? 'block' : 'none';
+}

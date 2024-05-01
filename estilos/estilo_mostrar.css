@@ -12,10 +12,9 @@ main {
   flex: 1; /* Hace que el contenido principal (main) ocupe todo el espacio restante */
 }
   
- 
   /* Estilos del header */
 header {
-    background-color: #232f3e;
+    background-color: #6bb39b;
     color: #ffffff;
     padding: 0.2% 0;
 }
@@ -61,18 +60,21 @@ header {
 
 .bus:hover {
   background-color: #ff6600;
+  transition: 0.2s ease-in-out all;
 }
-  
-
-  
-
-  
+    
   /* Estilos del footer */
 footer {
-    background-color: #232f3e;
-    color: #ffffff;
+    background-color: #daf3ea;
+    color: #000000;
     text-align: center;
-    padding: 20px 0;
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .container {
@@ -80,12 +82,6 @@ footer {
   margin: 0 auto;
   padding: 0 20px;
 }
-
-
-
-
-
-
 
 .precio{
     color: black;
@@ -137,19 +133,108 @@ footer {
     text-align: justify;
 }
 
-.btn {
-  display: inline-block;
-  background-color: #ff9900;
-  color: black;    
+/*Estilos de los botones de compra*/
+
+.add-product {
+  width: 30%;
+  height: 45px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px 5px 20px 5px;
+  background-color: #000000;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 18px;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }
 
-.btn:hover {
-  background-color: #ff6600;
+.add-product span {
+  transition: 0.4s ease-in-out all;
+  position: absolute;
+  font-weight: bold;
+  top: 15px;
+  left: 30%;
+  color: #fff;
+}
+
+.add-product .icon-button1 {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  z-index: 2;
+  left: -40px;
+  transition: .3s ease-in-out all;
+  opacity: 0;
+}
+
+.add-product .icon-button1 svg {
+  color: #fff;
+  width: 25px;
+  height: 25px;
+}
+
+.add-product:hover {
+  background: #2f9b05;
+  transition: .2s ease-in-out all;
+}
+
+.add-product:hover span {
+  left: 30px;
+}
+
+.add-product:hover .icon-button1 {
+  left: calc(100% - 50px);
+  opacity: 1;
+}
+
+.buy-now {
+  width: 30%;
+  margin-left: 10px;
+  height: 45px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px 5px 20px 5px;
+  background-color: #000000;
+  border: none;
+  cursor: pointer;
+}
+
+.buy-now span {
+  transition: 0.4s ease-in-out all;
+  position: absolute;
+  font-weight: bold;
+  top: 15px;
+  left: 25%;
+  color: #fff;
+}
+
+.buy-now .icon-button2 {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  z-index: 2;
+  left: -40px;
+  transition: .3s ease-in-out all;
+  opacity: 0;
+}
+
+.buy-now .icon-button2 svg {
+  color: #fff;
+  width: 25px;
+  height: 25px;
+}
+
+.buy-now:hover {
+  background: #2f9b05;
+  transition: .2s ease-in-out all;
+}
+
+.buy-now:hover span {
+  left: 30px;
+}
+
+.buy-now:hover .icon-button2 {
+  left: calc(100% - 50px);
+  opacity: 1;
 }
