@@ -1,0 +1,14 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0b0b0d;
+}
+
+.card{
+    width: 100%; /* O el ancho que desees */
+    padding: 10px;
+    background: #f7f4e8;
+}
