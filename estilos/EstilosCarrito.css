@@ -11,21 +11,29 @@ body {
 }   
 
 #openModal {
-    background-color: #85e6c0;
-    color: #0b0b0d;
-    border-radius: 3px;
+    background-color: #ffffff;
+    color: #1a202c;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
     position: relative;
-    padding-left: 30px;
-    padding-right: 10px;
+    padding: 10px 20px 10px 40px;
     left: 5px;
 }
 #openModal .bill{
     width: 20px;
     position: absolute;
-    left: 5px;
+    left: 20px;
 }
 #openModal:hover {
-    background-color: #6bb39b;
+    background-color: #e2e8f0;
 }   
 
 .modal {
