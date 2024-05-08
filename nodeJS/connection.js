@@ -2,9 +2,9 @@ const oracledb = require('oracledb');
 
 // Configuración de la conexión
 const dbConfig = {
-    user: 'nombre_de_usuario',
-    password: 'contraseña',
-    connectString: 'direccion_ip/servicio'
+    user: 'SYSTEM',
+    password: '12345',
+    connectString: 'localhost/xe'
 };
 
 // Función para conectar y ejecutar una consulta
@@ -16,9 +16,10 @@ async function runQuery() {
         connection = await oracledb.getConnection(dbConfig);
 
         // Ejecutar una consulta
-        const result = await connection.execute('SELECT * FROM tabla');
+        const result = await connection.execute('SELECT * FROM productos');
 
-        console.log(result.rows); // Imprimir los resultados
+        // Imprimir los resultados
+        console.log(result.rows);
     } catch (err) {
         console.error('Error al ejecutar la consulta:', err);
     } finally {
