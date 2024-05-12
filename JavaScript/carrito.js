@@ -129,6 +129,11 @@ window.onload = function () {
 
 };
 
+
+/*************************************************
+| Creado por Carlos Gonzalez y Salvador Martínez |
+*************************************************/
+
 document.getElementById('openModal').addEventListener('click', function() {
   document.getElementById('modal').style.display = 'block';
 });
@@ -142,3 +147,5 @@ window.addEventListener('click', function(event) {
       document.getElementById('modal').style.display = 'none';
   }
 });
+
+/************************************************/
