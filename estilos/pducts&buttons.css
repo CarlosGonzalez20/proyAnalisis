@@ -15,6 +15,9 @@ img {
 .item-producto {
     border-radius: 10px;
 }
+.item-producto:hover{
+    background-color: #daf3ea;
+}
 
 .item-producto img {
     width: 100%;
@@ -96,7 +99,7 @@ img {
     position: absolute;
     font-weight: bold;
     top: 15px;
-    left: 35%;
+    left: 33%;
 }
 
 .add-product .icon-button1 {
@@ -143,7 +146,7 @@ img {
     position: absolute;
     font-weight: bold;
     top: 15px;
-    left: 35%;
+    left: 30%;
 }
 
 .buy-now .icon-button2 {
