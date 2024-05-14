@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MegaMart</title>
+    <link rel="stylesheet" href="../estilos/pprincipal.css">
+    <link rel="stylesheet" href="../estilos/pducts&buttons.css">
+</head>
+<style>
+     /* Para desplazar el submenu */
+    #menuSidebar {
+        overflow-y: auto;
+    }
+</style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="conten">
+            <div class="logo">
+                <a href="../paginas/home.html"><img src="/imagenes/logopng.png" alt="Amazon Logo"></a>
+            </div>
+            <input class="input" type="text" placeholder="Busca un producto">
+            <a href="#" class="bus">🔍︎</a>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li class="nav-item" id="toggleMenu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                </svg>
+                <span class="nav-link">Todo</span>
+            </li>
+            <li class="nav-item"><a href="../paginas/Ofertas.html" class="nav-link">Ofertas</a>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+                </svg>                  
+            </li>
+            <li class="nav-item"><a href="../paginas/Destacados.html" class="nav-link">Destacados</a>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                </svg>                  
+            </li>
+        </ul>
+        <div class="icons">
+            <a href="../paginas/CarritoCompras.html"> <!-- Colocar enlace a la página de el carrito -->
+                <div class="icon-cart-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-cart">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                    <div class="count-products">
+                        <span id="contador-productos">0</span> <!-- conectar con la BD en vez de 0 -->
+                    </div>
+                </div>
+            </a>
+            <svg id="toggleUserMenu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-user">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg> 
+            <div class="user-menu">
+                <ul>
+                    <li><div class="user-menu-name"><span>Nombre de Usuario</span></div></li>
+                    <li><div class="user-menu-email"><span>Correo electrónico</span></div></li>
+                    <li><div class="user-menu-account"><a href="../paginas/Login.html"><span>Cuenta</span><!-- Cambiar en backend para alternar entre login y mostrar datos de cuenta-->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-account">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                        </svg>                          
+                    </a></div></li>
+                </ul>
+            </div>            
+        </div>
+    </nav>
+    <section class="main-section">
+        <h2 class="section-title">Electricidad y Suministros Eléctricos</h2><br>
+        <p class="section-content">Descubre nuestra amplia gama de suministros eléctricos y productos de electricidad para hogares y negocios. Desde cables y enchufes hasta iluminación LED de alta eficiencia, tenemos todo lo que necesitas para mantener tu espacio conectado y energizado de manera segura y confiable.</p>
+    </section>
+    <div class="conteiner-items">
+        <div class="item-producto">
+            <figure>
+                <a href="../paginas/mostrar.html">
+                    <img loading="lazy" src="../imagenes/prueba.jpeg" alt="producto1">
+                </a>
+            </figure>
+            <div class="info-product">
+                <h2>Producto muestra</h2>
+                <p class="price">$10</p>
+                <a href="carrito"> <!-- Cambiar enlace -->
+                    <button class="add-product">
+                        <div class="icon-button1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0-3-3m3 3 3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+                            </svg>                                                
+                        </div>
+                    <span>Añadir al Carrito</span></button></a>
+                <a href="ahora"> <!-- Cambiar enlace -->
+                <button class="buy-now">
+                    <div class="icon-button2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                        </svg>                          
+                    </div>
+                <span>Compra Inmediata</span></button></a>
+            </div>
+        </div>
+        <div class="item-producto">
+            <figure>
+                <a href="../paginas/mostrar.html">
+                    <img loading="lazy" src="../imagenes/prueba2.jpg" alt="producto1">
+                </a>
+            </figure>
+            <div class="info-product">
+                <h2>Producto muestra</h2>
+                <p class="price">$10</p>
+                <a href="carrito"> <!-- Cambiar enlace -->
+                    <button class="add-product">
+                        <div class="icon-button1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0-3-3m3 3 3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+                            </svg>                                                
+                        </div>
+                    <span>Añadir al Carrito</span></button></a>
+                <a href="ahora"> <!-- Cambiar enlace -->
+                <button class="buy-now">
+                    <div class="icon-button2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                        </svg>                          
+                    </div>
+                <span>Compra Inmediata</span></button></a>
+            </div>
+        </div>
+        <div class="item-producto">
+            <figure>
+                <a href="../paginas/mostrar.html">
+                    <img loading="lazy" src="../imagenes/prueba.jpeg" alt="producto1">    
+                </a>        
+            </figure>
+            <div class="info-product">
+                <h2>Producto muestra</h2>
+                <p class="price">$10</p>
+                <a href="carrito"> <!-- Cambiar enlace -->
+                    <button class="add-product">
+                        <div class="icon-button1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0-3-3m3 3 3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+                            </svg>                                                
+                        </div>
+                    <span>Añadir al Carrito</span></button></a>
+                <a href="ahora"> <!-- Cambiar enlace -->
+                <button class="buy-now">
+                    <div class="icon-button2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                        </svg>                          
+                    </div>
+                <span>Compra Inmediata</span></button></a>
+            </div>
+        </div>
+        <div class="item-producto">
+            <figure>
+                <a href="../paginas/mostrar.html">
+                    <img loading="lazy" src="../imagenes/prueba2.jpg" alt="producto1">     
+                </a>       
+            </figure>
+            <div class="info-product">
+                <h2>Producto muestra</h2>
+                <p class="price">$10</p>
+                <a href="carrito"> <!-- Cambiar enlace -->
+                    <button class="add-product">
+                        <div class="icon-button1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m8.25 3v6.75m0 0-3-3m3 3 3-3M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+                            </svg>                                                
+                        </div>
+                    <span>Añadir al Carrito</span></button></a>
+                <a href="ahora"> <!-- Cambiar enlace -->
+                <button class="buy-now">
+                    <div class="icon-button2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                        </svg>                          
+                    </div>
+                <span>Compra Inmediata</span></button></a>
+            </div>
+        </div>
+    </div>
+    <nav class="sub-nav">
+        <ul class="nav-list">
+            <li class="nav-item"><span class="nav-link" onclick="toggleInfo()">Contacto</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="margin-bottom: 3px;">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                </svg>                  
+            </li>
+        </ul>
+        <div id="info" class="info" style="display: none;">
+            <!-- Agregar información aquí -->
+            <div class="contact">
+                <div class="name">Carlos Geovanni González López</div>
+                <div class="carnet">9959-20-6164</div>
+                <div class="email">cgonzalezl19@miumg.edu.gt</div>
+            </div>
+            <div class="contact">
+                <div class="name">René Salvador Martínez Over</div>
+                <div class="carnet">9959-21-4167</div>
+                <div class="email">rmartinezo@miumg.edu.gt</div>
+            </div>
+            <div class="contact">
+                <div class="name">Byron Steven Linares Carrera</div>
+                <div class="carnet">0901-21-3619</div>
+                <div class="email">blinaresc1@miumg.edu.gt</div>
+            </div>
+            <div class="contact">
+                <div class="name">Edgar</div>
+                <div class="carnet">agregar carnet</div>
+                <div class="email"></div>
+            </div>
+            <div class="contact">
+                <div class="name">Pamela</div>
+                <div class="carnet">agregar carnet</div>
+                <div class="email"></div>
+            </div>
+            <div class="contact">
+                <div class="name">Sebastian</div>
+                <div class="carnet">agregar carnet</div>
+                <div class="email"></div>
+            </div>
+        </div>        
+    </nav>
+    <div id="menuSidebar" class="sidebar">
+        <ul class="sidebar-list">
+            <!-- Conectar con la BD -->
+            <!-- Agregar categorías -->
+            <!-- Agregar enlaces en subcategorías -->
+            <li class="sidebar-item">
+                <div class="sidebar-link" onclick="toggleSubmenu('submenu1')">Automoción y Accesorios
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>   
+                </div>               
+                <!-- Agregar subcategorías -->
+                <ul id="submenu1" class="sidebar-submenu">
+                    <li><a href="../Carlos Gonzalez/Accesorios de Interior.html">Accesorios de Interior</a></li>
+                    <li><a href="../Carlos Gonzalez/Audio y Entretenimiento para Vehiculo.html">Audio y Entretenimiento para Vehiculo</a></li>
+                    <li><a href="../Carlos Gonzalez/Herramientas y Equipos de Mantenimiento.html">Herramientas y Equipos de Mantenimiento</a></li>
+                    <li><a href="../Carlos Gonzalez/Iluminación y Faros.html">Iluminación y Faros</a></li>
+                    <li><a href="../Carlos Gonzalez/Neumáticos y Ruedas.html">Neumáticos y Ruedas</a></li>
+                    <li><a href="../Carlos Gonzalez/Productos de limpieza y cuidado.html">Productos de limpieza y cuidado</a></li>
+                    <li><a href="../Carlos Gonzalez/Repuestos y Componentes.html">Repuestos y Componentes</a></li>
+                    <li><a href="../Carlos Gonzalez/Accesorios de Exterior.html">Accesorios de Exterior</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu2')">Deporte
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu2" class="sidebar-submenu">
+                    <li><a href="../Carlos Gonzalez/Articulos de deporte acuatico.html">Artículos de deporte acuático</a></li>
+                    <li><a href="../Carlos Gonzalez/Accesorios para Deportes de Equipo.html">Accesorios para Deportes de Equipo </a></li>
+                    <li><a href="../Carlos Gonzalez/Ropa Deportiva.html">Ropa Deportiva</a></li>
+                    <li><a href="../Carlos Gonzalez/Accesorios para Deportes al Aire Libre.html">Accesorios para Deportes al Aire Libre</a></li>
+                    <li><a href="../Carlos Gonzalez/Mochilas.html">Mochilas</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu3')">Herramientas y mejoras para el hogar
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu3" class="sidebar-submenu">
+                    <li><a href="../Carlos Gonzalez/Electricidad y Suministros Eléctricos.html">Electricidad y Suministros Eléctricos</a></li>
+                    <li><a href="../Carlos Gonzalez/Pintura y Suministros de Paredes.html">Pintura y Suministros de Paredes</a></li>
+                    <li><a href="../Carlos Gonzalez/Ferretería y Cerrajería.html">Ferretería y Cerrajería</a></li>
+                    <li><a href="../Carlos Gonzalez/Fontanería y Suministros de Baño.html">Fontanería y Suministros de Baño</a></li>
+                    <li><a href="../Carlos Gonzalez/Herramientas Eléctricas.html">Herramientas Eléctricas</a></li>
+                    <li><a href="../Carlos Gonzalez/Herramientas Manuales.html">Herramientas Manuales</a></li>
+                    <li><a href="../Carlos Gonzalez/Suministros de Seguridad.html">Suministros de Seguridad</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu4')">Salud
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu4" class="sidebar-submenu">
+                    <li><a href="../Carlos Gonzalez/Ayudas para la Movilidad.html">Ayudas para la Movilidad</a></li>
+                    <li><a href="../Carlos Gonzalez/Equipamiento Médico.html">Equipamiento Médico</a></li>
+                    <li><a href="../Carlos Gonzalez/Equipos para la Práctica de Eje.html">Equipos para la Práctica de Eje</a></li>
+                    <li><a href="../Carlos Gonzalez/Productos para el Bienestar Mental.html">Productos para el Bienestar Mental</a></li>
+                    <li><a href="../Carlos Gonzalez/Productos para el Control Personal.html">Productos para el Control Personal</a></li>
+                    <li><a href="../Carlos Gonzalez/Suplementos Nutricionales.html">Suplementos Nutricionales</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu5')">Software y juegos de video
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu5" class="sidebar-submenu">
+                    <li><a href="../Carlos Gonzalez/Juegos de Consola.html">Juegos de Consola</a></li>
+                    <li><a href="../Carlos Gonzalez/Juegos para PC.html">Juegos para PC</a></li>
+                    <li><a href="../Carlos Gonzalez/Software de Diseño Gráfico.html">Software de Diseño Gráfico</a></li>
+                    <li><a href="../Carlos Gonzalez/Software de Productividad.html">Software de Productividad</a></li>
+                    <li><a href="../Carlos Gonzalez/Software Educativo.html">Software Educativo</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu6')">Artesanías
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu6" class="sidebar-submenu">
+                    <li><a href="../Sebas/Arte de papel y cartón.html">Arte de papel y cartón</a></li>
+                    <li><a href="../Sebas/Artesanías en Madera.html">Artesanías en Madera</a></li>
+                    <li><a href="../Sebas/Cerámica y alfarería.html">Cerámica y alfarería</a></li>
+                    <li><a href="../Sebas/Joyería Artesanal.html">Joyería Artesanal</a></li>
+                    <li><a href="../Sebas/Textiles y tejidos.html">Textiles y tejidos</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu7')">Audio
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu7" class="sidebar-submenu">
+                    <li><a href="../Sebas/Altavoces.html">Altavoces</a></li>
+                    <li><a href="../Sebas/Reproductores de Musica.html">Reproductores de Musica</a></li>
+                    <li><a href="../Sebas/Auriculares.html">Auriculares</a></li>
+                    <li><a href="../Sebas/Equipos de grabación y producción de audio.html">Equipos de grabación y producción de audio</a></li>
+                    <li><a href="../Sebas/Reproductores de Musica.html">Reproductores de Musica</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu8')">Calzado
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu8" class="sidebar-submenu">
+                    <li><a href="../Sebas/Bebé.html">Bebé</a></li>
+                    <li><a href="../Sebas/Niña.html">Niña</a></li>
+                    <li><a href="../Sebas/Niño.html">Niño</a></li>
+                    <li><a href="../Sebas/Caballero.html">Caballero</a></li>
+                    <li><a href="../Sebas/Dama.html">Dama</a></li>
+                    <li><a href="../Sebas/Mascotas.html">Mascotas</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu9')">Herramientas
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu9" class="sidebar-submenu">
+                    <li><a href="../Sebas/Herramientas de bricolaje y construcción.html">Herramientas de bricolaje y construcción</a></li>
+                    <li><a href="../Sebas/Herramientas Manuales.html">Herramientas Manuales</a></li>
+                    <li><a href="../Sebas/Herramientas de jardinería.html">Herramientas de jardinería</a></li>
+                    <li><a href="../Sebas/Herramientas de medición.html">Herramientas de medición</a></li>
+                    <li><a href="../Sebas/Herramientas eléctricas.html">Herramientas eléctricas</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu10')">Iluminación
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu10" class="sidebar-submenu">
+                    <li><a href="../Sebas/Focos.html">Focos</a></li>
+                    <li><a href="../Sebas/Leds RGB.html">Leds RGB</a></li>
+                    <li><a href="../Sebas/Iluminación decorativa.html">Iluminación decorativa</a></li>
+                    <li><a href="../Sebas/Iluminación exterior.html">Iluminación exterior</a></li>
+                    <li><a href="../Sebas/Lampara de mesa.html">Lampara de mesa</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu11')">Alimentación
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu11" class="sidebar-submenu">
+                    <li><a href="../paginas/Wafleras.html">Wafleras</a></li>
+                    <li><a href="../paginas/Alimentos para bebé.html">Alimentos para bebé</a></li>
+                    <li><a href="../paginas/Bebidas.html">Bebidas</a></li>
+                    <li><a href="../paginas/Galletas.html">Galletas</a></li>
+                    <li><a href="../paginas/Cereales.html">Cereales</a></li>
+                    <li><a href="../paginas/Desayuno.html">Desayuno</a></li>
+                    <li><a href="../paginas/Lacteos.html">Lacteos</a></li>
+                    <li><a href="../paginas/Embutido.html">Embutido</a></li>
+                    <li><a href="../paginas/Regalar.html">Regalar</a></li>
+                    <li><a href="../paginas/Kits de comida fresca.html">Kits de comida fresca</a></li>
+                    <li><a href="../paginas/Alimentos congelados.html">Alimentos congelados</a></li>
+                    <li><a href="../paginas/Ingredientes para elaboracion de vino y cerveza.html">Ingredientes para elaboracion de vino y cerveza</a></li>
+                    <li><a href="../paginas/Carne.html">Carne</a></li>
+                    <li><a href="../paginas/Suplementos veganos.html">Suplementos veganos</a></li>
+                    <li><a href="../paginas/Productos básicos de despensa.html">Productos básicos de despensa</a></li>
+
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu12')">Mascotas
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu12" class="sidebar-submenu">
+                    <li><a href="../paginas/Perros.html">Perros </a></li>
+                    <li><a href="../paginas/Gatos.html">Gatos </a></li>
+                    <li><a href="../paginas/Peces y Mascotas Acuáticas.html">Peces y Mascotas Acuáticas </a></li>
+                    <li><a href="../paginas/Aves Domésticas.html">Aves Domésticas </a></li>
+                    <li><a href="../paginas/Artículos para Caballos.html">Artículos para Caballos </a></li>
+                    <li><a href="../paginas/Reptiles y Anfibios.html">Reptiles y Anfibios </a></li>
+                    <li><a href="../paginas/Animales Pequeños.html">Animales Pequeños </a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu13')">Electrodomésticos
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu13" class="sidebar-submenu">
+                    <li><a href="../paginas/Licuadoras.html">Licuadoras</a></li>
+                    <li><a href="../paginas/Panificadores.html">Panificadores</a></li>
+                    <li><a href="../paginas/Cafeteras.html">Cafeteras</a></li>
+                    <li><a href="../paginas/Refrigeradores compactos.html">Refrigeradores compactos</a></li>
+                    <li><a href="../paginas/Quemadores de mostrador.html">Quemadores de mostrador</a></li>
+                    <li><a href="../paginas/Moldes de Minipasteles y Cake Pops.html">Moldes de Minipasteles y Cake Pops</a></li>
+                    <li><a href="../paginas/Ollas a presión eléctricas.html">Ollas a presión eléctricas</a></li>
+                    <li><a href="../paginas/Sartenes eléctricos.html">Sartenes eléctricos</a></li>
+                    <li><a href="../paginas/Freidoras.html">Freidoras</a></li>
+                    <li><a href="../paginas/Maquinas para hacer Helado.html">Maquinas para hacer Helado</a></li>
+                    <li><a href="../paginas/Utensilios de cocina eléctricos.html">Utensilios de cocina eléctricos</a></li>
+                    <li><a href="../paginas/Exprimidores Eléctricos.html">Exprimidores Eléctricos</a></li>
+                    <li><a href="../paginas/Saca corchos eléctricos.html">Saca corchos eléctricos </a></li>
+                    <li><a href="../paginas/Refrigeradores para barriles de cerveza.html">Refrigeradores para barriles de cerveza</a></li>
+                    <li><a href="../paginas/Hornos de Microondas.html">Hornos de Microondas</a></li>
+                    <li><a href="../paginas/Arroceras.html">Arroceras</a></li>
+                    <li><a href="../paginas/Ollas de coción lenta.html">Ollas de coción lenta</a></li>
+                    <li><a href="../paginas/Máquinas para hacer refrescos.html">Máquinas para hacer refrescos</a></li>
+                    <li><a href="../paginas/Máquina para hacer palomitas.html">Máquina para hacer palomitas</a></li>
+                    <li><a href="../paginas/Vaporeras Eléctricas.html">Vaporeras Eléctricas</a></li>
+                    <li><a href="../paginas/Wafleras.html">Wafleras</a></li>
+                    <li><a href="../paginas/Cavas.html">Cavas</a></li>
+                    <li><a href="../paginas/Lavavajillas.html">Lavavajillas</a></li>
+                    <li><a href="../paginas/Procesadores de alimentos.html">Procesadores de alimentos</a></li>
+                    <li><a href="../paginas/Hervidor eléctrico.html">Hervidor eléctrico</a></li>
+                    <li><a href="../paginas/Woks.html">Woks</a></li>
+                    <li><a href="../paginas/Jarras Eléctricas.html">Jarras Eléctricas</a></li>
+                    <li><a href="../paginas/Batidoras para cocina.html">Batidoras para cocina</a></li>
+
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu14')">Jardín
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu14" class="sidebar-submenu">
+                    <li><a href="../paginas/Cuidado de Jardinería y Césped.html">Cuidado de Jardinería y Césped</a></li>
+                    <li><a href="../paginas/Decoración Exterior.html">Decoración Exterior</a></li>
+                    <li><a href="../paginas/Muebles y Accesorios para Patio.html">Muebles y Accesorios para Patio</a></li>
+                    <li><a href="../paginas/Cocina Exterior.html">Cocina Exterior</a></li>
+                    <li><a href="../paginas/Iluminación de Exterior.html">Iluminación de Exterior</a></li>
+                    <li><a href="../paginas/Herramientas Eléctricas de Exterior.html">Herramientas Eléctricas de Exterior</a></li>
+                    <li><a href="../paginas/Albercas, Jacuzzis y Suministros.html">Albercas, Jacuzzis y Suministros</a></li>
+                    <li><a href="../paginas/Generadores y Energía Portátil.html">Generadores y Energía Portátil</a></li>
+                    <li><a href="../paginas/Productos para Control de Plagas.html">Productos para Control de Plagas</a></li>
+                    <li><a href="../paginas/Herramientas para Limpieza de Nieve.html">Herramientas para Limpieza de Nieve</a></li>
+                    <li><a href="../paginas/Calefacción Exterior.html">Calefacción Exterior</a></li>
+                    <li><a href="../paginas/Almacén Exterior.html">Almacén Exterior</a></li>
+                    <li><a href="../paginas/Granja y Rancho.html">Granja y Rancho</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu15')">Teléfonos móviles y accesorios
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu15" class="sidebar-submenu">
+                    <li><a href="../paginas/Accesorio de celulares.html">Accesorio de celulares</a></li>
+                    <li><a href="../paginas/Accesorio.html">Accesorio</a></li>
+                    <li><a href="../paginas/Celulares.html">Celulares</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu16')">Juguetes
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu16" class="sidebar-submenu">
+                    <li><a href="../Salvador/muñecas.html">Muñecas y accesorios</a></li>
+                    <li><a href="../Salvador/armables.html">Armables y Construcciones</a></li>
+                    <li><a href="../Salvador/Vehiculos.html">Vehiculos y transporte pesado</a></li>
+                    <li><a href="../Salvador/exterior.html">Juguetes de exterior</a></li>
+                 
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu17')">Productos de oficina
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu17" class="sidebar-submenu">
+                    <li><a href="../paginas/Papeleria Basica.html">Papeleria Basica</a></li>
+                    <li><a href="../paginas/Organizacion y archivado.html">Organizacion y archivado</a></li>
+                    <li><a href="../paginas/Escritura y correcion.html">Escritura y correcion</a></li>
+                    <li><a href="../paginas/Accesorios de escritorio.html">Accesorios de escritorio</a></li>
+                    <li><a href="../paginas/Equipamiento de oficina.html">Equipamiento de oficina</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu18')">Camaras Drones
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu18" class="sidebar-submenu">
+                    <li><a href="../paginas/Cámaras DSLR.html">Cámaras DSLR</a></li>
+                    <li><a href="../paginas/Cámaras sin espejo.html">Cámaras sin espejo</a></li>
+                    <li><a href="../paginas/Drones de fotografía aérea.html">Drones de fotografía aérea</a></li>
+                    <li><a href="../paginas/Cámaras de seguridad y vigilancia.html">Cámaras de seguridad y vigilancia</a></li>
+           
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu19')">Peliculas y Música
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu19" class="sidebar-submenu">
+                    <li><a href="../paginas/Películas de Acción.html">Películas de Acción</a></li>
+                    <li><a href="../paginas/Comedias.html">Comedias</a></li>
+                    <li><a href="../paginas/Drama.html">Drama</a></li>
+                    <li><a href="../paginas/Ciencia Ficción.html">Ciencia Ficción</a></li>
+                    <li><a href="../paginas/Documentales.html">Documentales</a></li>
+                    <li><a href="../paginas/Música.html">Música</a></li>
+                    <li><a href="../paginas/Electronica.html">Electronica</a></li>
+                    <li><a href="../paginas/Jazz.html">Jazz</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu20')">Ropa
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu20" class="sidebar-submenu">
+                    <li><a href="../paginas/Camisetas.html">Camisetas</a></li>
+                    <li><a href="../paginas/Pantalones.html">Pantalones</a></li>
+                    <li><a href="../paginas/Vestidos.html">Vestidos</a></li>
+                    <li><a href="../paginas/Chaquetas.html">Chaquetas</a></li>
+                    <li><a href="../paginas/Accesorios.html">Accesorios</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu21')">Electrónica
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu21" class="sidebar-submenu">
+                    <li><a href="../paginas/Telefonos Moviles.html">Telefonos Moviles</a></li>
+                    <li><a href="../paginas/Computadoras portatiles.html">Computadoras portatiles</a></li>
+                    <li><a href="../paginas/Televisores.html">Televisores</a></li>
+                    <li><a href="../paginas/Camaras.html">Camaras</a></li>
+                    <li><a href="../paginas/Accesorios electronicos.html">Accesorios electronicos</a></li>
+                    <li><a href="../paginas/Para el hogar.html">Para el hogar</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu22')">Libros
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu22" class="sidebar-submenu">
+                    <li><a href="../paginas/Ficcion.html">Ficcion</a></li>
+                    <li><a href="../paginas/No ficcion.html">No ficcion</a></li>
+                    <li><a href="../paginas/Literatura clásica.html">Literatura clásica</a></li>
+                    <li><a href="../paginas/desarrollo personal.html">desarrollo personal</a></li>
+                    <li><a href="../paginas/Libros de texto.html">Libros de texto</a></li>
+                    <li><a href="../paginas/Novelas gráficas.html">Novelas gráficas</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu23')">Musica
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu23" class="sidebar-submenu">
+                    <li><a href="../paginas/CD.html">CD</a></li>
+                    <li><a href="../paginas/Vinilos.html">Vinilos</a></li>
+                    <li><a href="../paginas/Digitales.html">Digitales</a></li>
+                    <li><a href="../paginas/Instrumentos.html">Instrumentos</a></li>
+                    <li><a href="../paginas/Accesorios musicales.html">Accesorios musicales</a></li>
+                    <li><a href="../paginas/Partituras.html">Partituras</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu24')">Redes
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu24" class="sidebar-submenu">
+                    <li><a href="../paginas/Router.html">Router</a></li>
+                    <li><a href="../paginas/Switch.html">Switch</a></li>
+                    <li><a href="../paginas/NAS.html">NAS</a></li>
+                    <li><a href="../paginas/Equipo de seguridad de red.html">Equipo de seguridad de red</a></li>
+                    <li><a href="../paginas/Accesorios de redes.html">Accesorios de redes</a></li>
+                    <li><a href="../paginas/Software de gestión de redes.html">Software de gestión de redes</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu25')">Video
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu25" class="sidebar-submenu">
+                    <li><a href="../paginas/DVD.html">DVD</a></li>
+                    <li><a href="../paginas/Blu-Ray.html">Blu-Ray</a></li>
+                    <li><a href="../paginas/Television.html">Television</a></li>
+                    <li><a href="../paginas/Documentales.html">Documentales</a></li>
+                    <li><a href="../paginas/Peliculas Digital.html">Peliculas Digital</a></li>
+                    <li><a href="../paginas/Colecciones especiales.html">Colecciones especiales</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu26')">Hogar y cocina
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu26" class="sidebar-submenu">
+                    <li><a href="../paginas/utencilios de cocina.html">utencilios de cocina</a></li>
+                    <li><a href="../paginas/electrodomesticos de cocina.html">electrodomesticos de cocina</a></li>
+                    <li><a href="../paginas/almacenamiento y organización.html">almacenamiento y organización </a></li>
+                    <li><a href="../paginas/limpieza.html">limpieza</a></li>
+                    <li><a href="../paginas/electrodomesticos de hogar.html">electrodomesticos de hogar</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu27')">Belleza y cuidado personal
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu27" class="sidebar-submenu">
+                    <li><a href="../paginas/cuidado facial.html">cuidado facial</a></li>
+                    <li><a href="../paginas/cuidado corporal.html">cuidado corporal</a></li>
+                    <li><a href="../paginas/cuidado para el cabello.html">cuidado para el cabello</a></li>
+                    <li><a href="../paginas/maquillaje.html">maquillaje</a></li>
+                    <li><a href="../paginas/manos y uñas.html">manos y uñas</a></li>
+                    <li><a href="../paginas/fragancias.html">fragancias</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu28')">Joyeria
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu28" class="sidebar-submenu">
+                    <li><a href="../paginas/anillos.html">anillos</a></li>
+                    <li><a href="../paginas/collares.html">collares</a></li>
+                    <li><a href="../paginas/pulseras.html">pulseras</a></li>
+                    <li><a href="../paginas/aretes.html">aretes</a></li>
+                    <li><a href="../paginas/relojes.html">relojes</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu29')">Bebe
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu29" class="sidebar-submenu">
+                    <li><a href="../paginas/alimentacion.html">alimentacion</a></li>
+                    <li><a href="../paginas/higiene y cuidado.html">higiene y cuidado</a></li>
+                    <li><a href="../paginas/ropa y accesorios.html">ropa y accesorios</a></li>
+                    <li><a href="../paginas/transporte y seguridad.html">transporte y seguridad</a></li>
+                    <li><a href="../paginas/estimulacion y entretenimiento.html">estimulacion y entretenimiento</a></li>
+                    <li><a href="../paginas/cuidado del sueño.html">cuidado del sueño</a></li>
+                    <li><a href="../paginas/baño y cuidado de la piel.html">baño y cuidado de la piel</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item"><div class="sidebar-link" onclick="toggleSubmenu('submenu30')">Arte, Costura y Manualidades
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+            </div>
+                <!-- Agregar subcategorías -->
+                <ul id="submenu30" class="sidebar-submenu">
+                    <li><a href="../paginas/pintura y dibujo.html">pintura y dibujo</a></li>
+                    <li><a href="../paginas/articulos de costura.html">articulos de costura</a></li>
+                    <li><a href="../paginas/manualidades para niños.html">manualidades para niños</a></li>
+                    <li><a href="../paginas/tejido y ganchillo.html">tejido y ganchillo</a></li>
+                    <li><a href="../paginas/scrapbooking y papeleria.html">scrapbooking y papeleria</a></li>
+                    <li><a href="../paginas/herramienta de grabado y tallado.html">herramienta de grabado y tallado</a></li>
+                    <li><a href="../paginas/pintura y dibujo para niños.html">pintura y dibujo para niños</a></li>
+                    <li><a href="../paginas/costura para principiantes.html">costura para principiantes</a></li>
+                    <li><a href="../paginas/manualidades para adultos.html">manualidades para adultos</a></li>
+                    <li><a href="../paginas/tela y materiales de costura.html">tela y materiales de costura</a></li>
+                    <li><a href="../paginas/joyeria y bisuteria.html">joyeria y bisuteria</a></li>
+                    <li><a href="../paginas/materiales de arte.html">materiales de arte</a></li>
+                    <li><a href="../paginas/corte y modelado.html">corte y modelado</a></li>
+                    <li><a href="../paginas/pegamento y adhesivos.html">pegamento y adhesivos</a></li>
+                    <li><a href="../paginas/kit de manualidades.html">kit de manualidades</a></li>
+                    <li><a href="../paginas/papel y cartulina.html">papel y cartulina</a></li>
+                    <li><a href="../paginas/agujas y alfileres.html">agujas y alfileres</a></li>
+                    <li><a href="../paginas/hilos y accesorios de costura.html">hilos y accesorios de costura</a></li>
+                    <li><a href="../paginas/herramientas de modelado de arcilla.html">herramientas de modelado de arcilla</a></li>
+                    <li><a href="../paginas/libros de manualidades.html">libros de manualidades</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+    <footer class="main-footer">
+        <p class="footer-copyright">Derechos de autor &copy; 2024</p>
+    </footer>
+    <!-- Script JavaScript -->
+    <script src="../JavaScript/funcionesClic.js"></script>
+</body>
+</html>

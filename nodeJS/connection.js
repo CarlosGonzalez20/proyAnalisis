@@ -1,3 +1,9 @@
+
+
+/*************************************************
+| Creado por Carlos Gonzalez y Salvador Martínez |
+*************************************************/
+
 const oracledb = require('oracledb');
 
 // Configuración de la conexión
